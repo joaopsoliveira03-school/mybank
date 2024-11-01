@@ -1,0 +1,30 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: loan-proposals
+
+  datasource:
+    url: jdbc:h2:mem:loan-proposalsDB
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+endpoints:
+  risk-analysis-microservice:
+    baseUrl: http://localhost:8092/risk-analysis/current-effort-rate
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
