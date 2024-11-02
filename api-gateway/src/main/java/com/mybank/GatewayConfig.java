@@ -16,6 +16,8 @@ public class GatewayConfig {
                         .uri("lb://risk-analysis"))
                 .route("loan-proposals-route", r -> r.path("/loan-proposals/**")
                         .uri("lb://loan-proposals"))
+                .route("loan-contracts-route", r -> r.path("/loan-contracts/**")
+                        .uri("lb://loan-contracts"))
                 .build();
     }
 }

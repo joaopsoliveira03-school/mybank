@@ -15,4 +15,5 @@ public class EffortRateDTO {
     private float monthlyAverageIncome;
     private float existingCreditsSum;
     private float effortRate;
+    private float loanAmountRequested;
 }

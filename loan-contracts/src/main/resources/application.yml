@@ -2,10 +2,28 @@ server:
   port: 8094
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://host.docker.internal:8761/eureka/
 
 spring:
   application:
     name: loan-contracts
+
+  datasource:
+    url: jdbc:mysql://mysql:3306/loan-contracts
+    username: spring
+    password: SuperSafeUserPassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+      hibernate:
+          ddl-auto: update
+      show-sql: true
+
+#  docker:
+#    compose:
+#      enabled: true
+#      file: ./loan-contracts/docker-compose.yml

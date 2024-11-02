@@ -7,6 +7,12 @@
     <file url="file://$PROJECT_DIR$/customers/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/extra-3/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/loan-contracts/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/loan-contracts/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/loan-proposals/src/main/java" charset="UTF-8" />

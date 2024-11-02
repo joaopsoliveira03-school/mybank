@@ -31,7 +31,7 @@ public class RiskAnalysisController {
     }
 
     @PostMapping("/current-effort-rate/{customerId}")
-    public ResponseEntity<?> currentEffortRate(@PathVariable Integer customerId, @RequestBody EffortRateDTO effortRateDTO) {
+    public ResponseEntity<?> currentEffortRate(@PathVariable("customerId") Integer customerId, @RequestBody EffortRateDTO effortRateDTO) {
         /**
          * HttpStatus (produces)
          * 200 OK - Request processed successfully
@@ -51,7 +51,8 @@ public class RiskAnalysisController {
             effortRate = riskAnalysisService.getEffortRate(
                     customerId,
                     effortRateDTO.getMonthlyAverageIncome(),
-                    effortRateDTO.getExistingCreditsSum()
+                    effortRateDTO.getExistingCreditsSum(),
+                    effortRateDTO.getLoanAmountRequested()
             );
         } catch (MissingDataException e) {
             return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body(e.getMessage());

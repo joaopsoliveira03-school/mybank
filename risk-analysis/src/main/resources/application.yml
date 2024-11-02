@@ -12,6 +12,8 @@ endpoints:
     baseUrl: http://localhost:8091/customers
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/

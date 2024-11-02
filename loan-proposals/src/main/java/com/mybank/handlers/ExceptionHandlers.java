@@ -44,5 +44,33 @@ public class ExceptionHandlers {
     public String handleUnexistingCustomerException(RiskAnalysisServiceUnexistingCustomerException e) {
         return e.getMessage();
     }
+
+    @ExceptionHandler(HighEffortRateException.class)
+    @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
+    @ResponseBody
+    public String handleHighEffortRateException(HighEffortRateException e) {
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(ProposalExpiredException.class)
+    @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
+    @ResponseBody
+    public String handleProposalExpiredException(ProposalExpiredException e) {
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(InconsistentDataException.class)
+    @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
+    @ResponseBody
+    public String handleInconsistentDataException(InconsistentDataException e) {
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(ProposalNotPendingException.class)
+    @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
+    @ResponseBody
+    public String handleProposalNotPendingException(ProposalNotPendingException e) {
+        return e.getMessage();
+    }
 }
 

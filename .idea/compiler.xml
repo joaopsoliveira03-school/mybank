@@ -7,11 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="extra-3" />
+        <module name="risk-analysis" />
+        <module name="extra-1" />
+        <module name="extra-2" />
         <module name="api-gateway" />
         <module name="customers" />
         <module name="loan-proposals" />
         <module name="eureka-server" />
-        <module name="risk-analysis" />
         <module name="loan-contracts" />
       </profile>
     </annotationProcessing>

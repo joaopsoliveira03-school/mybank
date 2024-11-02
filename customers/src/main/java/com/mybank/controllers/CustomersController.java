@@ -36,7 +36,7 @@ public class CustomersController {
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<?> get(@PathVariable Integer id) {
+    ResponseEntity<?> get(@PathVariable("id") Integer id) {
         /**
          * HttpStatus (produces)
          * 200 OK - Request processed successfully
@@ -70,7 +70,7 @@ public class CustomersController {
     }
 
     @PutMapping("/{id}")
-    ResponseEntity<?> update(@PathVariable Integer id, @RequestBody CustomerDTO customerDTO) {
+    ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody CustomerDTO customerDTO) {
         Customer updatedCustomer;
 
         if (customerDTO.getId() != id) {
@@ -89,7 +89,7 @@ public class CustomersController {
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<?> delete(@PathVariable Integer id) {
+    ResponseEntity<?> delete(@PathVariable("id") Integer id) {
         try {
             customersService.delete(id);
         } catch (Exception e) {

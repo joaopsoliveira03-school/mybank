@@ -13,6 +13,8 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDateTime;
+
 @Service
 public class RiskAnalysisService {
 
@@ -22,7 +24,8 @@ public class RiskAnalysisService {
     public EffortRate getEffortRate(
             Integer customerId,
             float monthlyAverageIncome,
-            float existingCreditsSum) throws MissingDataException, CustomerServiceUnexistingCustomerException, CustomerServiceUnexpectedException {
+            float existingCreditsSum,
+            float loanAmountRequested) throws MissingDataException, CustomerServiceUnexistingCustomerException, CustomerServiceUnexpectedException {
 
         CustomerDTO customerDTO;
         EffortRate effortRate;
@@ -38,7 +41,8 @@ public class RiskAnalysisService {
                 customerDTO.getAge(),
                 customerDTO.getFamilyMembersCount(),
                 monthlyAverageIncome,
-                existingCreditsSum
+                existingCreditsSum,
+                loanAmountRequested
         );
 
         effortRate = new EffortRate();
@@ -50,6 +54,8 @@ public class RiskAnalysisService {
         effortRate.setMonthlyAverageIncome(monthlyAverageIncome);
         effortRate.setExistingCreditsSum(existingCreditsSum);
         effortRate.setEffortRate(effortRateValue);
+        effortRate.setDateTime(LocalDateTime.now());
+        effortRate.setLoanAmountRequested(loanAmountRequested);
 
         return effortRate;
     }
@@ -79,7 +85,7 @@ public class RiskAnalysisService {
         }
     }
 
-    private float getEffortRate(Integer age, Integer familyMembersCount, float monthlyAverageIncome, float existingCreditsSum) {
+    private float getEffortRate(Integer age, Integer familyMembersCount, float monthlyAverageIncome, float existingCreditsSum, float loanAmountRequested) {
         return 0.15f * familyMembersCount;
     }
 }

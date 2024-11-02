@@ -11,4 +11,5 @@ public class EffortRateRequestDTO {
     private Integer customerId;
     private float monthlyAverageIncome;
     private float existingCreditsSum;
+    private float loanAmountRequested;
 }

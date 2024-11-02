@@ -17,4 +17,5 @@ public class EffortRate {
     private float monthlyAverageIncome;
     private float existingCreditsSum;
     private float effortRate;
+    private float loanAmountRequested;
 }

@@ -10,7 +10,7 @@
     <artifactId>risk-analysis</artifactId>
     <packaging>jar</packaging>
 
-    <name>module2</name>
+    <name>risk-analysis</name>
     <url>https://maven.apache.org</url>
 
     <properties>

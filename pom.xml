@@ -17,6 +17,9 @@
     <module>loan-contracts</module>
     <module>api-gateway</module>
     <module>eureka-server</module>
+    <module>extra-1</module>
+      <module>extra-2</module>
+    <module>extra-3</module>
   </modules>
 
   <properties>

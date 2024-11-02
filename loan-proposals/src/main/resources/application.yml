@@ -6,14 +6,15 @@ spring:
     name: loan-proposals
 
   datasource:
-    url: jdbc:h2:mem:loan-proposalsDB
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/loan_proposals
+    driverClassName: org.postgresql.Driver
+    username: spring
+    password: SuperSafeUserPassword
 
-  h2:
-    console:
+  docker:
+    compose:
       enabled: true
+      file: ./loan-proposals/docker-compose.yml
 
   jpa:
     hibernate:
@@ -25,6 +26,8 @@ endpoints:
     baseUrl: http://localhost:8092/risk-analysis/current-effort-rate
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
