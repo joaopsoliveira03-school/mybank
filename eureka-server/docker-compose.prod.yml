@@ -1,0 +1,8 @@
+services:
+  eureka-server:
+    build:
+      context: ../
+      dockerfile: eureka-server/Dockerfile.prod
+    image: spring-containers-eureka-server:stable
+    ports:
+      - "8761:8761"

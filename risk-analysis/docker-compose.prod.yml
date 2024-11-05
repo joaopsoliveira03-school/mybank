@@ -1,0 +1,8 @@
+services:
+  risk-analysis:
+    build:
+      context: ../
+      dockerfile: risk-analysis/Dockerfile.prod
+    image: spring-containers-risk-analysis:stable
+    ports:
+      - "8092:8092"

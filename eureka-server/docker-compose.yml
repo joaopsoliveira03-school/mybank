@@ -1,0 +1,10 @@
+services:
+  eureka-server:
+      build:
+        context: ../
+        dockerfile: eureka-server/Dockerfile
+      image: spring-containers-eureka-server:latest
+#      volumes:
+#        - ../:/app
+      ports:
+          - "8761:8761"

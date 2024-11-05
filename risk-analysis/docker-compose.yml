@@ -1,0 +1,10 @@
+services:
+  risk-analysis:
+      build:
+        context: ../
+        dockerfile: risk-analysis/Dockerfile
+      image: spring-containers-risk-analysis:latest
+#      volumes:
+#        - ../:/app
+      ports:
+          - "8092:8092"

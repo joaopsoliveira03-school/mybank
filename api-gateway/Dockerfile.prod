@@ -1,0 +1,26 @@
+# Stage 1: Build the JAR
+FROM maven AS build
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the whole project into the Docker container
+COPY . .
+
+# Build the project
+RUN mvn clean package -DskipTests -pl api-gateway
+
+# Stage 2: Run the application
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file from the previous stage
+COPY --from=build /app/api-gateway/target/api-gateway-*.jar app.jar
+
+# Expose the port your application will run on
+EXPOSE 8090
+
+# Run the application
+CMD ["java", "-jar", "app.jar"]

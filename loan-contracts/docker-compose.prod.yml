@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: SuperSafeRootPassword
+      MYSQL_DATABASE: loan-contracts
+      MYSQL_USER: spring
+      MYSQL_PASSWORD: SuperSafeUserPassword
+    #        ports:
+    #        - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    #        ports:
+    #          - "8080:80"
+    depends_on:
+      - mysql
+  loan-contracts:
+    build:
+      context: ../
+      dockerfile: loan-contracts/Dockerfile.prod
+    image: spring-containers-loan-contracts:stable
+    ports:
+      - "8094:8094"
+    depends_on:
+      - mysql

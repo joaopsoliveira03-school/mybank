@@ -1,0 +1,10 @@
+services:
+    api-gateway:
+      build:
+        context: ../
+        dockerfile: api-gateway/Dockerfile
+      image: spring-containers-api-gateway:latest
+#      volumes:
+#        - ../:/app
+      ports:
+          - "8090:8090"

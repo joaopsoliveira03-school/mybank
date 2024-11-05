@@ -26,8 +26,8 @@ services:
   loan-proposals:
     build:
       context: ../
-      dockerfile: loan-proposals/Dockerfile
-    image: spring-containers-loan-proposals:latest
+      dockerfile: loan-proposals/Dockerfile.prod
+    image: spring-containers-loan-proposals:stable
     ports:
       - "8093:8093"
     depends_on:

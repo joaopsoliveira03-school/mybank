@@ -21,3 +21,13 @@ services:
           - "8080:80"
         depends_on:
           - mysql
+    customers:
+        build:
+            context: ../
+            dockerfile: customers/Dockerfile
+        image: spring-containers-customers:latest
+        ports:
+            - "8091:8091"
+        depends_on:
+            - mysql
+        restart: unless-stopped
